@@ -2,22 +2,36 @@
 layout: default
 ---
 
-<div class="home">
+<h1>Posts</h1>
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<div id="post-list">
+  {% for post in site.posts %}
+		<div class="card hoverable">
+		{% if post.list_image != nil %}
+			<div class="card-image">
+				<a href="{{ post.url | prepend: site.baseurl }}">
+	        <img class="list-post-image" src="{{ post.list_image | prepend: site.imageurl | prepend: site.baseurl }}">
+		      <span class="card-title white-text">
+		        {{ post.title }}
+		      </span>
+				</a>
+      </div>
+		{% endif %}
+			<div class="card-content">
+			{% if post.list_image == nil %}
+	      <span class="card-title">
+	        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+	      </span>
+			{% endif %}
+				{{ post.excerpt }}
+			</div>
+			<div class="card-action">
+				<span>{{ post.date | date: "%b %-d, %Y" }}</span>
+			</div>
+    </div>
+  {% endfor %}
 </div>
+
+<div class="divider"></div>
+
+<p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
