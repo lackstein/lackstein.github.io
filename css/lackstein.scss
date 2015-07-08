@@ -56,4 +56,10 @@ body {
   }
 }
 
+.list-post-responsive-title {
+  @media only screen and (min-width : 992px) {
+    display: none !important;
+  }
+}
+
 @import "syntax-highlighting";

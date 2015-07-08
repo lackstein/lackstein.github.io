@@ -20,9 +20,11 @@ layout: default
 			<div class="card-content">
 			{% if post.list_image == nil %}
 	      <span class="card-title">
+			{% else %}
+				<span class="card-title list-post-responsive-title">
+			{% endif %}
 	        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 	      </span>
-			{% endif %}
 				{{ post.excerpt }}
 			</div>
 			<div class="card-action">
