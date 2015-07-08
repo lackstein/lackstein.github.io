@@ -1,0 +1,37 @@
+---
+---
+html, body {
+  height: 100%;
+}
+
+#site {
+  height: 100%;
+  margin-bottom: 0px;
+}
+
+#sidebar {
+  @media only screen and (min-width : 993px) {
+    height: 100%;
+  }
+  color: #fff;
+  background-color: #455a64;
+  
+  #sidebar-content {
+    @media only screen and (min-width : 993px) {
+      padding-top: 50px;
+    }
+  }
+  
+  #sidebar-links {
+    width: 100%;
+  }
+  
+  .sidebar-col {
+    width: 25%;
+    margin-left: 0;
+    
+    @media only screen and (min-width : 993px) {
+      width: 100%;
+    }
+  }
+}

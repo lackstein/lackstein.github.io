@@ -4,17 +4,22 @@
   {% include head.html %}
 
   <body>
-
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+    <div id="site" class="row">
+      <div id="sidebar" class="col s12 l2 z-depth-2">
+        <div id="sidebar-content" class="container">
+          {% include sidebar.html %}
+        </div>
+      </div>
+      
+      <div class="col s12 l10">
+        <div class="container">
+          {{ content }}
+        </div>
       </div>
     </div>
-
-    {% include footer.html %}
-
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
   </body>
 
 </html>
